@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iTeleHealth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        .active {
+            color: #007bff !important;
+        }
+        .feature-card:hover {
+             transform: translateY(-4px);
+             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-blue-50 to-cyan-50">
+    <header class="sticky top-0 bg-white bg-opacity-90 rounded-b-lg shadow-md py-3 z-10 transition duration-300">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#home" class="flex items-center text-xl font-semibold text-blue-700">
+                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2 text-blue-500">
+                    <path d="M21.882 6.557a9.96 9.96 0 0 0-4.56-4.56 9.91 9.91 0 0 0-9.035 0 9.96 9.96 0 0 0-4.56 4.557 9.91 9.91 0 0 0 0 9.035 9.96 9.96 0 0 0 4.557 4.56 9.91 9.91 0 0 0 9.035 0 9.961 9.961 0 0 0 4.56-4.557 9.91 9.91 0 0 0 0-9.035z"></path><path d="M15.3 9.312a3 3 0 1 0-5.994 0 3 3 0 0 0 5.994 0z"></path><path d="M12 15v.01"></path>
+                </svg>
+                iTeleHealth
+            </a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#home" class="text-gray-700 hover:text-blue-600 transition duration-300">Home</a></li>
+                    <li><a href="#features" class="text-gray-700 hover:text-blue-600 transition duration-300">Features</a></li>
+                    <li><a href="#problem" class="text-gray-700 hover:text-blue-600 transition duration-300">Problem</a></li>
+                    <li><a href="#solution" class="text-gray-700 hover:text-blue-600 transition duration-300">Solution</a></li>
+                    <li><a href="#persona" class="text-gray-700 hover:text-blue-600 transition duration-300">User Persona</a></li>
+                    <li><a href="#team" class="text-gray-700 hover:text-blue-600 transition duration-300">Team</a></li>
+                    <li><a href="#contact" class="text-gray-700 hover:text-blue-600 transition duration-300">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="hamburger-btn" class="md:hidden text-gray-700 focus:outline-none" aria-label="Toggle Navigation">
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
+        <div class="bg-white rounded-lg shadow-lg w-80 h-auto p-6 mt-20 ml-4">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu-btn" class="text-gray-700 focus:outline-none" aria-label="Close Menu">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="block">
+                <ul class="space-y-4">
+                    <li><a href="#home" class="block text-lg text-gray-700 hover:text-blue-600 transition duration-300">Home</a></li>
+                    <li><a href="#features" class="block text-lg text-gray-700 hover:text-blue-600 transition duration-300">Features</a></li>
+                     <li><a href="#problem" class="block text-lg text-gray-700 hover:text-blue-600 transition duration-300">Problem</a></li>
+                    <li><a href="#solution" class="block text-lg text-gray-700 hover:text-blue-600 transition duration-300">Solution</a></li>
+                    <li><a href="#persona" class="block text-lg text-gray-700 hover:text-blue-600 transition duration-300">User Persona</a></li>
+                    <li><a href="#team" class="block text-lg text-gray-700 hover:text-blue-600 transition duration-300">Team</a></li>
+                    <li><a href="#contact" class="block text-lg text-gray-700 hover:text-blue-600 transition duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="home" class="text-center py-16">
+            <h2 class="text-4xl font-semibold text-blue-800 mb-6">iTeleHealth: Your Health, Connected</h2>
+            <p class="text-gray-700 text-lg mb-8">Connecting you to quality healthcare, wherever you are.</p>
+            <button onclick="window.location.href='#features'" class="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold py-3 px-8 rounded-full shadow-md transition duration-300 ease-in-out">Explore Features</button>
+        </section>
+
+        <section id="features" class="text-center py-16">
+            <h2 class="text-3xl font-semibold text-blue-800 mb-12">Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 px-6">
+                <div class="feature-card bg-white rounded-xl shadow-md p-8 flex flex-col justify-between transition duration-300 ease-in-out">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-4">Offline-First Functionality</h3>
+                    <p class="text-gray-700 text-md mb-6">Access your health data and record symptoms even without internet connectivity.</p>
+                    <div class="flex justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-12 h-12 text-blue-500">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 18h16.5m-16.5-6h16.5m-16.5-6h16.5m-19.5 9h3.75m12-3v10.5a.75.75 0 01-.75.75h-7.5a.75.75 0 01-.75-.75V15m10.5-3.75v-7.5a.75.75 0 00-.75-.75h-1.5a.75.75 0 00-.75.75v7.5m3-3h-9" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="feature-card bg-white rounded-xl shadow-md p-8 flex flex-col justify-between transition duration-300 ease-in-out">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-4">AI-Powered Diagnostics</h3>
+                    <p class="text-gray-700 text-md mb-6">Receive intelligent preliminary诊断 suggestions powered by advanced AI algorithms.</p>
+                    <div class="flex justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-blue-500">
+                            <path d="M21.882 6.557a9.96 9.96 0 0 0-4.56-4.56 9.91 9.91 0 0 0-9.035 0 9.96 9.96 0 0 0-4.56 4.557 9.91 9.91 0 0 0 0 9.035 9.96 9.96 0 0 0 4.557 4.56 9.91 9.91 0 0 0 9.035 0 9.961 9.961 0 0 0 4.56-4.557 9.91 9.91 0 0 0 0-9.035z"></path><path d="M15.3 9.312a3 3 0 1 0-5.994 0 3 3 0 0 0 5.994 0z"></path><path d="M12 15v.01"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="feature-card bg-white rounded-xl shadow-md p-8 flex flex-col justify-between transition duration-300 ease-in-out">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-4">Virtual Consultations</h3>
+                    <p class="text-gray-700 text-md mb-6">Connect with experienced doctors remotely for convenient and secure consultations.</p>
+                    <div class="flex justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-12 h-12 text-blue-500">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25-9 3.694-9 8.25 4.03 8.25 9 8.25zM12 9v4.875m-1.5-1.342a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="problem" class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-semibold text-blue-800 mb-10 text-center">The Problem</h2>
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <p class="text-gray-700 text-lg">
+                        Many individuals in rural Ghana face significant barriers to accessing healthcare.  These include long distances to medical facilities, overcrowding at clinics, and a shortage of healthcare professionals.  This lack of access leads to delayed diagnoses, worsening health outcomes, and preventable complications, particularly for vulnerable populations like the elderly and those with chronic illnesses.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-semibold text-blue-800 mb-10 text-center">Our Solution: iTeleHealth</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-gray-700 text-lg mb-8">
+                            iTeleHealth is a telemedicine application designed to bridge the healthcare gap in rural Ghana. Our platform empowers patients to take control of their health by:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-700 text-lg mb-8 space-y-3">
+                            <li>Recording symptoms and health data</li>
+                            <li>Receiving AI-powered preliminary diagnostic suggestions</li>
+                            <li>Connecting with doctors for remote consultations</li>
+                        </ul>
+                        <p class="text-gray-700 text-lg">
+                            iTeleHealth works seamlessly even in areas with limited connectivity, ensuring that everyone has access to essential healthcare services.
+                        </p>
+                        <button onclick="window.location.href='#features'" class="mt-8 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold py-3 px-8 rounded-full shadow-md transition duration-300 ease-in-out">Explore Features</button>
+                    </div>
+                    <div class="solution-image rounded-lg shadow-md">
+                         <img src="https://placehold.co/600x400/E0F7FA/00869e?text=iTeleHealth+App&font=IBM+Plex+Sans" alt="iTeleHealth App Interface" class="w-full rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="persona" class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-semibold text-blue-800 mb-10 text-center">Meet Kofi Mensah</h2>
+                <div class="bg-white rounded-xl shadow-md p-8 flex flex-col md:flex-row items-center gap-10">
+                    <div class="persona-image rounded-lg shadow-sm w-full md:w-1/3">
+                        <img src="https://placehold.co/300x300/D9E4E7/005b82?text=Kofi+Mensah&font=IBM+Plex+Sans" alt="Kofi Mensah" class="w-full rounded-lg">
+                    </div>
+                    <div class="persona-details w-full md:w-2/3">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Kofi Mensah</h3>
+                        <p class="text-gray-700 text-lg mb-2"><span class="font-semibold text-blue-600">Demographics:</span> 68-year-old retired farmer living in a rural Ghanaian village.</p>
+                        <p class="text-gray-700 text-lg mb-2"><span class="font-semibold text-blue-600">Challenges:</span> Struggles with mobility, has a chronic illness, and must travel long distances for medical care.</p>
+                        <p class="text-gray-700 text-lg mb-4"><span class="font-semibold text-blue-600">Impact:</span> Often skips medical check-ups due to travel costs and overcrowding at clinics, leading to deteriorating health.</p>
+                        <p class="text-gray-700 text-lg">Kofi represents the many individuals in rural Ghana who face barriers to accessing quality healthcare. iTeleHealth is designed to address these challenges and improve the lives of people like Kofi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-semibold text-blue-800 mb-10 text-center">Our Team</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 px-6">
+                    <div class="team-member bg-white rounded-xl shadow-md p-6 text-center transition duration-300 ease-in-out hover:shadow-lg">
+                        <img src="https://placehold.co/150x150/B0E0E6/00869e?text=Doctor+1&font=IBM+Plex+Sans" alt="Team Member 1" class="w-32 h-32 rounded-full mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Dr. Alice Brown</h3>
+                        <p class="text-gray-600 text-md">Medical Director</p>
+                    </div>
+                    <div class="team-member bg-white rounded-xl shadow-md p-6 text-center transition duration-300 ease-in-out hover:shadow-lg">
+                        <img src="https://placehold.co/150x150/B0E0E6/00869e?text=Doctor+2&font=IBM+Plex+Sans" alt="Team Member 2" class="w-32 h-32 rounded-full mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Dr. Kwame Nkrumah</h3>
+                        <p class="text-gray-600 text-md">Chief Medical Officer</p>
+                    </div>
+                    <div class="team-member bg-white rounded-xl shadow-md p-6 text-center transition duration-300 ease-in-out hover:shadow-lg">
+                        <img src="https://placehold.co/150x150/B0E0E6/00869e?text=Tech+Lead&font=IBM+Plex+Sans" alt="Team Member 3" class="w-32 h-32 rounded-full mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Kwame Asante</h3>
+                        <p class="text-gray-600 text-md">Technology Lead</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-semibold text-blue-800 mb-10 text-center">Contact Us</h2>
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <p class="text-gray-700 text-lg text-center mb-8">
+                        For more information about iTeleHealth, partnerships, or investment opportunities, please get in touch.
+                    </p>
+                    <div class="contact-form mx-auto w-full md:w-1/2">
+                        <form>
+                            <div class="mb-6">
+                                <label for="name" class="block text-blue-700 text-sm font-bold mb-2">Your Name</label>
+                                <input type="text" id="name" name="name" class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your name">
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-blue-700 text-sm font-bold mb-2">Your Email</label>
+                                <input type="email" id="email" name="email" class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your email">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-blue-700 text-sm font-bold mb-2">Message</label>
+                                <textarea id="message" name="message" class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-y" placeholder="Enter your message"></textarea>
+                            </div>
+                            <button type="submit" class="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold py-3 px-8 rounded-full shadow-md transition duration-300 ease-in-out focus:outline-none focus:shadow-outline">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-900 text-white py-5 rounded-t-lg shadow-md">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 iTeleHealth. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById("hamburger-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeMenuBtn = document.getElementById("close-menu-btn");
+        const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('section');
+        const header = document.querySelector('header');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle("hidden");
+        }
+
+        hamburgerBtn.addEventListener("click", toggleMobileMenu);
+        closeMenuBtn.addEventListener("click", toggleMobileMenu);
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener("click", toggleMobileMenu);
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && event.target !== hamburgerBtn) {
+                toggleMobileMenu();
+            }
+        });
+
+        function updateActiveNavLink() {
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 150 && window.scrollY < sectionTop + sectionHeight - 150) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        function updateHeaderStyle() {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-opacity-95', 'shadow-lg');
+                header.classList.remove('bg-opacity-90', 'shadow-md');
+            } else {
+                header.classList.remove('bg-opacity-95', 'shadow-lg');
+                header.classList.add('bg-opacity-90', 'shadow-md');
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            updateActiveNavLink();
+            updateHeaderStyle();
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
