@@ -205,6 +205,8 @@
       </div>
     </div>
 
+    
+
     <main class="container mx-auto px-4 py-8">
       <section id="home" class="text-center py-16">
         <h2 class="text-4xl font-semibold text-blue-800 mb-6">
@@ -519,79 +521,89 @@
     </footer>
 
     <script>
-      const hamburgerBtn = document.getElementById("hamburger-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const closeMenuBtn = document.getElementById("close-menu-btn");
-      const mobileMenuLinks = mobileMenu.querySelectorAll("a");
-      const navLinks = document.querySelectorAll(".nav-links a");
-      const sections = document.querySelectorAll("section");
-      const header = document.querySelector("header");
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburgerBtn = document.getElementById("hamburger-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeMenuBtn = document.getElementById("close-menu-btn");
+    const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+    const navLinks = document.querySelectorAll("nav a"); // fixed selector
+    const sections = document.querySelectorAll("section");
+    const header = document.querySelector("header");
 
-      function toggleMobileMenu() {
-        mobileMenu.classList.toggle("hidden");
+    // Toggle mobile menu visibility
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle("hidden");
+    }
+
+    hamburgerBtn?.addEventListener("click", toggleMobileMenu);
+    closeMenuBtn?.addEventListener("click", toggleMobileMenu);
+
+    mobileMenuLinks.forEach((link) => {
+      link.addEventListener("click", toggleMobileMenu);
+    });
+
+    // Close mobile menu if clicked outside
+    document.addEventListener("click", (event) => {
+      if (
+        !mobileMenu.classList.contains("hidden") &&
+        !mobileMenu.contains(event.target) &&
+        !hamburgerBtn.contains(event.target)
+      ) {
+        toggleMobileMenu();
       }
+    });
 
-      hamburgerBtn.addEventListener("click", toggleMobileMenu);
-      closeMenuBtn.addEventListener("click", toggleMobileMenu);
-      mobileMenuLinks.forEach((link) => {
-        link.addEventListener("click", toggleMobileMenu);
-      });
-
-      document.addEventListener("click", (event) => {
+    // Highlight nav link based on scroll
+    function updateActiveNavLink() {
+      let currentSectionId = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
         if (
-          !mobileMenu.classList.contains("hidden") &&
-          !mobileMenu.contains(event.target) &&
-          event.target !== hamburgerBtn
+          window.scrollY >= sectionTop - 150 &&
+          window.scrollY < sectionTop + sectionHeight - 150
         ) {
-          toggleMobileMenu();
+          currentSectionId = section.getAttribute("id");
         }
       });
 
-      function updateActiveNavLink() {
-        let currentSectionId = "";
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
-          if (
-            window.scrollY >= sectionTop - 150 &&
-            window.scrollY < sectionTop + sectionHeight - 150
-          ) {
-            currentSectionId = section.getAttribute("id");
-          }
-        });
-
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href").slice(1) === currentSectionId) {
-            link.classList.add("active");
-          }
-        });
-      }
-
-      function updateHeaderStyle() {
-        if (window.scrollY > 50) {
-          header.classList.add("bg-opacity-95", "shadow-lg");
-          header.classList.remove("bg-opacity-90", "shadow-md");
-        } else {
-          header.classList.remove("bg-opacity-95", "shadow-lg");
-          header.classList.add("bg-opacity-90", "shadow-md");
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").slice(1) === currentSectionId) {
+          link.classList.add("active");
         }
-      }
-
-      window.addEventListener("scroll", () => {
-        updateActiveNavLink();
-        updateHeaderStyle();
       });
+    }
 
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
+    // Sticky header style change
+    function updateHeaderStyle() {
+      if (window.scrollY > 50) {
+        header.classList.add("bg-opacity-95", "shadow-lg");
+        header.classList.remove("bg-opacity-90", "shadow-md");
+      } else {
+        header.classList.remove("bg-opacity-95", "shadow-lg");
+        header.classList.add("bg-opacity-90", "shadow-md");
+      }
+    }
 
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
+    // Scroll listeners
+    window.addEventListener("scroll", () => {
+      updateActiveNavLink();
+      updateHeaderStyle();
+    });
+
+    // Smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
         });
       });
-    </script>
+    });
+  });
+</script>
+
   </body>
 </html>
