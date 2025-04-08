@@ -458,57 +458,55 @@
               For more information about iTeleHealth, partnerships, or
               investment opportunities, please get in touch.
             </p>
-            <div class="contact-form mx-auto w-full md:w-1/2">
-              <form>
-                <div class="mb-6">
-                  <label
-                    for="name"
-                    class="block text-blue-700 text-sm font-bold mb-2"
-                    >Your Name</label
-                  >
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    placeholder="Enter your name"
-                  />
-                </div>
-                <div class="mb-6">
-                  <label
-                    for="email"
-                    class="block text-blue-700 text-sm font-bold mb-2"
-                    >Your Email</label
-                  >
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    placeholder="Enter your email"
-                  />
-                </div>
-                <div class="mb-6">
-                  <label
-                    for="message"
-                    class="block text-blue-700 text-sm font-bold mb-2"
-                    >Message</label
-                  >
-                  <textarea
-                    id="message"
-                    name="message"
-                    class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-y"
-                    placeholder="Enter your message"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  class="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold py-3 px-8 rounded-full shadow-md transition duration-300 ease-in-out focus:outline-none focus:shadow-outline"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
+           <div class="contact-form mx-auto w-full md:w-1/2">
+  <form action="https://formspree.io/f/xeoapdbk" method="POST">
+    <div class="mb-6">
+      <label for="name" class="block text-blue-700 text-sm font-bold mb-2">
+        Your Name
+      </label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Enter your name"
+        required
+      />
+    </div>
+    <div class="mb-6">
+      <label for="email" class="block text-blue-700 text-sm font-bold mb-2">
+        Your Email
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Enter your email"
+        required
+      />
+    </div>
+    <div class="mb-6">
+      <label for="message" class="block text-blue-700 text-sm font-bold mb-2">
+        Message
+      </label>
+      <textarea
+        id="message"
+        name="message"
+        class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-y"
+        placeholder="Enter your message"
+        required
+      ></textarea>
+    </div>
+    <button
+      type="submit"
+      class="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold py-3 px-8 rounded-full shadow-md transition duration-300 ease-in-out focus:outline-none focus:shadow-outline"
+    >
+      Send Message
+    </button>
+  </form>
+</div>
+
           </div>
         </div>
       </section>
